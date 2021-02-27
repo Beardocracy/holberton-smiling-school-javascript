@@ -1,0 +1,547 @@
+
+
+/* Reset / Normalize
+  ============================= */
+
+/*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}main{display:block}h1{font-size:2em;margin:.67em 0}hr{box-sizing:content-box;height:0;overflow:visible}pre{font-family:monospace,monospace;font-size:1em}a{background-color:transparent}abbr[title]{border-bottom:none;text-decoration:underline;text-decoration:underline dotted}b,strong{font-weight:bolder}code,kbd,samp{font-family:monospace,monospace;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}img{border-style:none}button,input,optgroup,select,textarea{font-family:inherit;font-size:100%;line-height:1.15;margin:0}button,input{overflow:visible}button,select{text-transform:none}[type=button],[type=reset],[type=submit],button{-webkit-appearance:button}[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner,button::-moz-focus-inner{border-style:none;padding:0}[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[type=submit]:-moz-focusring,button:-moz-focusring{outline:1px dotted ButtonText}fieldset{padding:.35em .75em .625em}legend{box-sizing:border-box;color:inherit;display:table;max-width:100%;padding:0;white-space:normal}progress{vertical-align:baseline}textarea{overflow:auto}[type=checkbox],[type=radio]{box-sizing:border-box;padding:0}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}[type=search]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}details{display:block}summary{display:list-item}template{display:none}[hidden]{display:none}
+
+:root {
+    --color-primary: #C271FF;
+    --color-black: #071629;
+    --color-darkblue: #071629;
+    --color-greencheck: #82D24F;
+}
+
+/* Holberton Fonts */
+@font-face {
+    font-family: 'holberton_school-icon';
+    src:  url('fonts/holberton_school-icon.eot?sq4eq4');
+    src:  url('fonts/holberton_school-icon.eot?sq4eq4#iefix') format('embedded-opentype'),
+      url('fonts/holberton_school-icon.ttf?sq4eq4') format('truetype'),
+      url('fonts/holberton_school-icon.woff?sq4eq4') format('woff'),
+      url('fonts/holberton_school-icon.svg?sq4eq4#holberton_school-icon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+}
+
+[class^="holberton_school-icon-"], [class*=" holberton_school-icon-"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'holberton_school-icon' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+  
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body, html {
+    height: 100%;
+    font-family: "Source Sans Pro";
+}
+
+.bg-primary {
+    background-color: var(--color-primary)!important;
+}
+
+.bg-darkblue {
+    background-color: var(--color-darkblue);
+}
+
+.font-coiny {
+    font-family: "Coiny";
+}
+
+.text-primary {
+    color: var(--color-primary)!important;
+}
+
+.text-darkblue {
+    color: var(--color-darkblue)!important;
+}
+
+.text-darkblue-subdued {
+    color: rgba(7, 22, 41, 0.501584);
+}
+
+/* Header Hero Backgrounds */
+
+.bg-pricing {
+    background: url("images/pic_2.jpg"), var(--color-black);
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: auto 768px;
+}
+
+.bg-courses {
+    background: url("images/pic_3.jpg"), var(--color-black);
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.header-hero-bg {
+    background: url("images/pic_1.jpg"), var(--color-black);
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: auto 768px;
+}
+
+@media only screen and (min-width: 989px) {
+    .header-hero-bg {
+        background-size: contain;
+    }
+    .bg-pricing {
+        background-size: contain;
+    
+    }.bg-courses {
+        background-size: contain;
+    }
+}
+
+@media only screen and (min-width: 1400px) {
+    .header-hero-bg {
+        background-size: cover;
+    }
+    .bg-pricing {
+        background-size: cover;
+    }
+
+    .bg-courses {
+        background-size: cover;
+    }
+}
+
+.holberton_school-icon-menu::before {
+    content: "\e911";
+}
+
+.nav-item {
+    font-weight: 700;
+    font-size: .8rem;
+}
+
+.h1-hero {
+    font-family: "Source Sans Pro";
+    font-weight: 700;
+    font-size: 120px;
+    margin-bottom: 0px;
+    margin-top: 175px;
+}
+
+.h2-hero {
+    font-family: "Source Sans Pro";
+    font-weight: 700;
+    font-size: 1rem;
+}
+
+.what-is-smileschool{
+    padding-top: 192px;
+}
+
+.h1-gopro {
+    font-weight: 700;
+    font-size: 60px;
+    margin-bottom: 55px;
+    margin-top: 75px;
+}
+
+@media only screen and (max-width: 576px) {
+    .h1-hero-sm {
+        font-size: 61px;
+    }
+}
+
+@media only screen and (max-width: 768px) and (min-width: 576px) {
+    .h1-hero-sm {
+        font-size: 85px;
+    }  
+}
+
+a.text-light:focus,
+a.text-light:hover {
+    color: var(--color-primary)!important;
+    text-decoration: underline;
+    text-decoration-color: white;
+    text-decoration-thickness: 2px;
+    text-underline-offset: .5rem;
+}
+
+.text-with-logo {
+    font-weight: 400;
+    font-size: 2rem;
+    line-height: 35.2px;
+    margin-bottom: 15px;
+}
+
+.h3-multi {
+    font-size: 32px;
+    font-weight: 300;
+}
+
+.h3-multi-hero {
+    margin-top: 168px;
+}
+
+.h3-multi-popular {
+    padding-top: 87px;
+    padding-bottom: 75px;
+}
+
+.h3-multi .emphasis {
+    color: var(--color-primary);
+    font-weight: 700;
+}
+
+.list-group-item {
+    background-color: transparent;
+    width: 150px;
+    border: none;
+    align-items: center;
+}
+
+.card-title {
+    font-weight: 900;
+    font-size: 18px;
+    width: 100%;
+}
+
+.navbar-toggler {
+    font-size: 1.75em;
+}
+
+.btn-primary {
+    background-color: var(--color-primary);
+    border-color: var(--color-primary);
+    filter: drop-shadow(0px 2px 20px rgba(0, 0, 0, 0.5));
+    border-radius: 22px;
+    height: 44px;
+    width: 162px;
+}
+
+.btn {
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.btn-primary:hover,
+.btn-primary:active,
+.btn-primary:focus {
+    background-color: var(--color-primary);
+    border-color: var(--color-primary);
+    opacity: 0.9;
+    box-shadow: none;
+}
+
+.btn-primary:not(:disabled):not(.disabled).active, .btn-primary:not(:disabled):not(.disabled):active, .show > .btn-primary.dropdown-toggle {
+    color: #fff;
+    background-color: var(--color-primary);
+    border-color: var(--color-primary);
+    opacity: 0.9;
+}
+
+.carousel-p,
+.carousel-title {
+    font-size: 22px;
+}
+
+.carousel-title {
+    font-weight: 700;
+}
+
+.carousel-img-circle {
+    margin-top: 91px;
+    margin-bottom: 24px;
+}
+
+.carousel-img-circle .rounded-circle {
+    width: 148px;
+    height: 148px;
+}
+
+@media only screen and (min-width: 576px) and (max-width: 768px) {
+    .carousel-img-circle {
+        margin-top: 91px;
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 992px) {
+    .carousel-img-circle {
+        margin-top: 114px;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .carousel-inner,
+    .carousel-text {
+        min-height: 392px;
+    }
+    .carousel-content {
+        margin-left: 100px;
+        margin-right: 100px;
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    .carousel-img-circle {
+        margin-top: 108px;
+    }
+    .carousel-img-circle .rounded-circle {
+        width: 160px;
+        height: 160px;
+    }
+}
+
+/* Carousel Icons */
+.white-icon-prev {
+    background-image: url(images/arrow_white_left.png)!important;
+}
+
+.white-icon-next {
+    background-image: url(images/arrow_white_right.png)!important;
+}
+
+.black-icon-prev {
+    background-image: url(images/arrow_black_left.png)!important;
+}
+
+.black-icon-next {
+    background-image: url(images/arrow_black_right.png)!important;
+}
+
+.carousel-control-next-icon,
+.carousel-control-prev-icon {
+    height: 63px;
+    width: 29px;
+}
+
+.carousel-control-next,
+.carousel-control-prev {
+    align-items: unset;
+    padding-top: 157px;
+}
+
+@media only screen and (max-width: 768px) {
+    .carousel-control-next,
+    .carousel-control-prev {
+        align-items: unset;
+        padding-top: 133px;
+    }
+}
+
+.card-video {
+    width: 255px!important;
+    border: none!important;
+}
+
+.card-text {
+    font-size: 14px;
+    line-height: 24px;
+}
+
+.text-author {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.card-img-overlay {
+    padding-top: 0!important;
+    padding-bottom: 0!important;
+    height: 154px;
+}
+
+.text-membership {
+    margin-top: 26px;
+    margin-bottom: 13px;
+}
+
+.text-membership-content {
+    max-width: 215px;
+    text-align: center;
+}
+
+.h3-membership {
+    padding-top: 70px;
+}
+
+.footer {
+    height: 249px;
+}
+
+.footer .footnote {
+    opacity: 0.35;
+    font-size: 12px;
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.social-item {
+    color: white;
+    font-size: 30px;
+}
+
+.holberton_school-icon-ic_facebook::before {
+	content: "\e908";
+    color: white;
+    font-size: 30px;
+}
+
+.holberton_school-icon-ic_instagram::before {
+	content: "\e90a";
+    color: white;
+    font-size: 30px;
+}
+
+.holberton_school-icon-ic_twitter::before {
+	content: "\e90f";
+    color: white;
+    font-size: 30px;
+}
+
+@media only screen and (max-width: 768px) {
+    .social-icons {
+        margin-top: 45px;
+    }
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+.text-price {
+    font-weight: 700;
+    font-size: 44px;
+    padding-top: 30px;
+    line-height: 44px;
+}
+
+.text-monthly {
+    font-size: 12px;
+    font-weight: 400;
+    opacity: .5;
+    line-height: 1;
+    margin-top: 0;
+}
+
+.text-12 {
+    font-size: 12px;
+}
+
+.text-18 {
+    font-size: 18px;
+}
+
+.text-60 {
+    font-size: 60px;
+}
+
+.text-14 {
+    font-size: 14px;
+}
+
+.text-faq {
+    font-size: 14px;
+    color: rgba(7, 22, 41, 0.501584);
+}
+
+.text-weight-300 {
+    font-weight: 300;
+}
+
+.text-weight-700 {
+    font-weight: 700;
+}
+
+.holberton_school-icon-check::before {
+	content: "\e905";
+    font-size: 28px;
+    color: var(--color-greencheck);
+}
+
+.rule-bg-gray {
+    background: #ffffff;
+    opacity: .2;
+}
+
+.text-color-darkblue {
+    color: var(--color-darkblue);
+}
+
+.bg-search-box {
+    background: rgb(255,255,255,0.25);
+    border-radius: 3px 3px 0px 0px;
+    border-bottom: 1px solid rgb(255,255,255,0.55)!important;
+    height: 50px;
+}
+
+.form-control,
+.form-control:focus {
+    border: none;
+}
+
+.form-control::placeholder {
+    color: white;
+    opacity: 0.5;
+    font-weight: 300;
+    font-size: 23px;
+}
+
+.search-text {
+    color: white;
+    font-weight: 300;
+    font-size: 23px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem;
+}
+
+.form-control:focus {
+	color: #495057;
+	outline: 0;
+    border-bottom: 2px solid rgb(255,255,255,0.9)!important;
+    background: rgb(255,255,255,0.25);
+	box-shadow: none;
+    border: none;
+}
+
+
+
+.holberton_school-icon-search_2::before {
+	content: "\e913";
+}
+
+.search-icon {
+    border-bottom: 1px solid rgb(255,255,255,0.55)!important;
+    background: rgb(255,255,255,0.25);
+    font-size: 20px;
+    padding-left: 8px;
+    border-radius: 3px 0px 0px 0px;
+}
+
+.dropdown-menu {
+    border: none;
+    border-radius: 0 0 0 0;
+}
+
+.dropdown-item:focus,
+.dropdown-item:hover {
+	color: var(--color-primary);
+	text-decoration: none;
+	background-color: white;
+}
+
+.dropdown-item.active, .dropdown-item:active {
+	color: var(--color-primary);
+	text-decoration: none;
+	background-color: white;
+}
+
+.text-results {
+    color: rgba(7, 22, 41, 0.296247);
+}

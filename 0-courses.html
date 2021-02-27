@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+        <title>SmileSchool - Courses</title>
+        <meta name="description" content="SmileSchool - Courses">
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Coiny&display=swap" rel="stylesheet">
+        
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+        
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <header>
+            <div class="bg-courses">    
+                <div class="container">
+                    <!-- Nav Bar -->
+                    <nav class="navbar navbar-expand-sm d-flex">
+                        <button type="button" class="navbar-toggler pl-0" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon holberton_school-icon-menu text-light"></span>
+                        </button>
+                        <div class="navbar-brand d-flex flex-column flex-sm-row mx-auto">
+                            <a class="mx-auto mr-sm-2">
+                                <img src="images/smile_off.png" alt="SmileSchool logo" width="37px" height="30px">
+                            </a>
+                            <a class="mt-2 mt-sm-0 ml-sm-2">
+                                <img src="images/logo.png" alt="SmileSchool text logo" width="114px">
+                            </a>
+                        </div>
+                        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon text-light"></span>
+                        </button>
+                        <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
+                            <div class="navbar-nav align-items-center justify-content-sm-between">
+                                <a class="nav-item nav-link text-light" href="#">COURSES</a>
+                                <a class="nav-item nav-link text-light ml-sm-4" href="pricing.html">PRICING</a>
+                                <a class="nav-item nav-link text-light ml-sm-4" href="#">LOGIN</a>
+                            </div>
+                        </div>
+                    </nav>
+                    <!-- Hero -->
+                    <section>
+                        <h1 class="d-none d-sm-block text-light font-coiny text-center pb-5 mb-0">« Don’t cry because it’s over.<br>
+                            <span class="text-primary">Smile</span> because it happened. »</h1>                        
+                    </section>    
+                </div>
+            </div>
+        </header>
+        <!-- Search -->
+        <section class="bg-primary py-5 text-light">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 col-lg-4">
+                        <div class="text-12 text-weight-700 my-2">KEYWORDS</div>
+                        <div class="input-group">
+                            <div class="search-icon d-flex justify-content-center align-items-center">
+                                <span class="holberton_school-icon-search_2"></span>
+                            </div>
+                            <input type="text" class="form-control bg-search-box text-light" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Search by keywords">
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div class="text-12 text-weight-700 my-2">TOPIC</div>
+                        <div class="dropdown">
+                            <div class="bg-search-box dropdown-toggle search-text" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                              Novice
+                            </div>
+                            <div class="dropdown-menu w-100 my-0" aria-labelledby="dropdownMenuButton">
+                              <div class="dropdown-item" href="#">Novice</div>
+                              <div class="dropdown-item" href="#">Intermediate</div>
+                              <div class="dropdown-item" href="#">Expert</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div class="text-12 text-weight-700 my-2">SORT BY</div>
+                        <div class="dropdown">
+                            <div class="bg-search-box dropdown-toggle search-text" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                              Most Popular
+                            </div>
+                            <div class="dropdown-menu w-100 my-0" aria-labelledby="dropdownMenuButton">
+                              <div class="dropdown-item" href="#">Most Popular</div>
+                              <div class="dropdown-item" href="#">Most Recent</div>
+                              <div class="dropdown-item" href="#">Most Viewed</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Results -->
+        <section>
+            <div class="container">
+                <div class="text-results py-4">11 videos</div>
+                <div class="row">
+                    <div class="card card-video col-12 col-md-4 col-xl-3">
+                        <img class="card-img-top" src="images/thumbnail_4.jpg" alt="thumbnail_4">
+                        <div class="card-img-overlay d-flex justify-content-center align-items-center">
+                            <img class="" src="images/play.png" alt="play" width="64px" height="64px">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Diagonal Smile</h5>
+                            <p class="card-text text-darkblue-subdued">Lorem ipsum dolor sit amet, consect adipiscing elit, sed do eiusmod.</p>
+                            <div class="d-flex">
+                                <img class="rounded-circle" src="images/profile_1.jpg" alt="Philip Massey headshot" width="30px" height="30px" loading="lazy">
+                                <p class="text-primary text-author my-0 py-0 align-self-center ml-2">Phillip Massey</p>
+                            </div>
+                            <div class="d-flex justify-content-between">
+                                <div class="d-flex pt-2">
+                                    <img class="" src="images/star_on.png" alt="star_on" width="15px" height="15px" loading="lazy">
+                                    <img class="ml-1" src="images/star_on.png" alt="star_on" width="15px" height="15px" loading="lazy">
+                                    <img class="ml-1" src="images/star_on.png" alt="star_on" width="15px" height="15px" loading="lazy">
+                                    <img class="ml-1" src="images/star_on.png" alt="star_on" width="15px" height="15px" loading="lazy">
+                                    <img class="ml-1" src="images/star_off.png" alt="star_off" width="15px" height="15px" loading="lazy">
+                                </div>
+                                <p class="text-primary text-author">8 min</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card card-video col-12 col-md-4 col-xl-3">
+                        <img class="card-img-top" src="images/thumbnail_3.jpg" alt="thumbnail_3">
+                        <div class="card-img-overlay d-flex justify-content-center align-items-center">
+                            <img class="" src="images/play.png" alt="play" width="64px" height="64px">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Sad Smile</h5>
+                            <p class="card-text text-darkblue-subdued">Lorem ipsum dolor sit amet, consect adipiscing elit, sed do eiusmod.</p>
+                            <div class="d-flex">
+                                <img class="rounded-circle" src="images/profile_1.jpg" alt="Philip Massey headshot" width="30px" height="30px" loading="lazy">
+                                <p class="text-primary text-author my-0 py-0 align-self-center ml-2">Phillip Massey</p>
+                            </div>
+                            <div class="d-flex justify-content-between">
+                                <div class="d-flex pt-2">
+                                    <img class="" src="images/star_on.png" alt="star_on" width="15px" height="15px" loading="lazy">
+                                    <img class="ml-1" src="images/star_on.png" alt="star_on" width="15px" height="15px" loading="lazy">
+                                    <img class="ml-1" src="images/star_on.png" alt="star_on" width="15px" height="15px" loading="lazy">
+                                    <img class="ml-1" src="images/star_on.png" alt="star_on" width="15px" height="15px" loading="lazy">
+                                    <img class="ml-1" src="images/star_off.png" alt="star_off" width="15px" height="15px" loading="lazy">
+                                </div>
+                                <p class="text-primary text-author">8 min</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card card-video col-12 col-md-4 col-xl-3">
+                        <img class="card-img-top" src="images/thumbnail_2.jpg" alt="thumbnail_2">
+                        <div class="card-img-overlay d-flex justify-content-center align-items-center">
+                            <img class="" src="images/play.png" alt="play" width="64px" height="64px">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Happy Smile</h5>
+                            <p class="card-text text-darkblue-subdued">Lorem ipsum dolor sit amet, consect adipiscing elit, sed do eiusmod.</p>
+                            <div class="d-flex">
+                                <img class="rounded-circle" src="images/profile_1.jpg" alt="Philip Massey headshot" width="30px" height="30px" loading="lazy">
+                                <p class="text-primary text-author my-0 py-0 align-self-center ml-2">Phillip Massey</p>
+                            </div>
+                            <div class="d-flex justify-content-between">
+                                <div class="d-flex pt-2">
+                                    <img class="" src="images/star_on.png" alt="star_on" width="15px" height="15px" loading="lazy">
+                                    <img class="ml-1" src="images/star_on.png" alt="star_on" width="15px" height="15px" loading="lazy">
+                                    <img class="ml-1" src="images/star_on.png" alt="star_on" width="15px" height="15px" loading="lazy">
+                                    <img class="ml-1" src="images/star_on.png" alt="star_on" width="15px" height="15px" loading="lazy">
+                                    <img class="ml-1" src="images/star_off.png" alt="star_off" width="15px" height="15px" loading="lazy">
+                                </div>
+                                <p class="text-primary text-author">8 min</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card card-video col-12 col-md-4 col-xl-3">
+                        <img class="card-img-top" src="images/thumbnail_1.jpg" alt="thumbnail_1">
+                        <div class="card-img-overlay d-flex justify-content-center align-items-center">
+                            <img class="" src="images/play.png" alt="play" width="64px" height="64px">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Natural Smile</h5>
+                            <p class="card-text text-darkblue-subdued">Lorem ipsum dolor sit amet, consect adipiscing elit, sed do eiusmod.</p>
+                            <div class="d-flex">
+                                <img class="rounded-circle" src="images/profile_1.jpg" alt="Philip Massey headshot" width="30px" height="30px" loading="lazy">
+                                <p class="text-primary text-author my-0 py-0 align-self-center ml-2">Phillip Massey</p>
+                            </div>
+                            <div class="d-flex justify-content-between">
+                                <div class="d-flex pt-2">
+                                    <img class="" src="images/star_on.png" alt="star_on" width="15px" height="15px" loading="lazy">
+                                    <img class="ml-1" src="images/star_on.png" alt="star_on" width="15px" height="15px" loading="lazy">
+                                    <img class="ml-1" src="images/star_on.png" alt="star_on" width="15px" height="15px" loading="lazy">
+                                    <img class="ml-1" src="images/star_on.png" alt="star_on" width="15px" height="15px" loading="lazy">
+                                    <img class="ml-1" src="images/star_off.png" alt="star_off" width="15px" height="15px" loading="lazy">
+                                </div>
+                                <p class="text-primary text-author">8 min</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card card-video col-12 col-md-4 col-xl-3">
+                        <img class="card-img-top" src="images/thumbnail_4.jpg" alt="thumbnail_4">
+                        <div class="card-img-overlay d-flex justify-content-center align-items-center">
+                            <img class="" src="images/play.png" alt="play" width="64px" height="64px">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Diagonal Smile</h5>
+                            <p class="card-text text-darkblue-subdued">Lorem ipsum dolor sit amet, consect adipiscing elit, sed do eiusmod.</p>
+                            <div class="d-flex">
+                                <img class="rounded-circle" src="images/profile_1.jpg" alt="Philip Massey headshot" width="30px" height="30px" loading="lazy">
+                                <p class="text-primary text-author my-0 py-0 align-self-center ml-2">Phillip Massey</p>
+                            </div>
+                            <div class="d-flex justify-content-between">
+                                <div class="d-flex pt-2">
+                                    <img class="" src="images/star_on.png" alt="star_on" width="15px" height="15px" loading="lazy">
+                                    <img class="ml-1" src="images/star_on.png" alt="star_on" width="15px" height="15px" loading="lazy">
+                                    <img class="ml-1" src="images/star_on.png" alt="star_on" width="15px" height="15px" loading="lazy">
+                                    <img class="ml-1" src="images/star_on.png" alt="star_on" width="15px" height="15px" loading="lazy">
+                                    <img class="ml-1" src="images/star_off.png" alt="star_off" width="15px" height="15px" loading="lazy">
+                                </div>
+                                <p class="text-primary text-author">8 min</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card card-video col-12 col-md-4 col-xl-3">
+                        <img class="card-img-top" src="images/thumbnail_3.jpg" alt="thumbnail_3">
+                        <div class="card-img-overlay d-flex justify-content-center align-items-center">
+                            <img class="" src="images/play.png" alt="play" width="64px" height="64px">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Sad Smile</h5>
+                            <p class="card-text text-darkblue-subdued">Lorem ipsum dolor sit amet, consect adipiscing elit, sed do eiusmod.</p>
+                            <div class="d-flex">
+                                <img class="rounded-circle" src="images/profile_1.jpg" alt="Philip Massey headshot" width="30px" height="30px" loading="lazy">
+                                <p class="text-primary text-author my-0 py-0 align-self-center ml-2">Phillip Massey</p>
+                            </div>
+                            <div class="d-flex justify-content-between">
+                                <div class="d-flex pt-2">
+                                    <img class="" src="images/star_on.png" alt="star_on" width="15px" height="15px" loading="lazy">
+                                    <img class="ml-1" src="images/star_on.png" alt="star_on" width="15px" height="15px" loading="lazy">
+                                    <img class="ml-1" src="images/star_on.png" alt="star_on" width="15px" height="15px" loading="lazy">
+                                    <img class="ml-1" src="images/star_on.png" alt="star_on" width="15px" height="15px" loading="lazy">
+                                    <img class="ml-1" src="images/star_off.png" alt="star_off" width="15px" height="15px" loading="lazy">
+                                </div>
+                                <p class="text-primary text-author">8 min</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card card-video col-12 col-md-4 col-xl-3">
+                        <img class="card-img-top" src="images/thumbnail_2.jpg" alt="thumbnail_2">
+                        <div class="card-img-overlay d-flex justify-content-center align-items-center">
+                            <img class="" src="images/play.png" alt="play" width="64px" height="64px">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Happy Smile</h5>
+                            <p class="card-text text-darkblue-subdued">Lorem ipsum dolor sit amet, consect adipiscing elit, sed do eiusmod.</p>
+                            <div class="d-flex">
+                                <img class="rounded-circle" src="images/profile_1.jpg" alt="Philip Massey headshot" width="30px" height="30px" loading="lazy">
+                                <p class="text-primary text-author my-0 py-0 align-self-center ml-2">Phillip Massey</p>
+                            </div>
+                            <div class="d-flex justify-content-between">
+                                <div class="d-flex pt-2">
+                                    <img class="" src="images/star_on.png" alt="star_on" width="15px" height="15px" loading="lazy">
+                                    <img class="ml-1" src="images/star_on.png" alt="star_on" width="15px" height="15px" loading="lazy">
+                                    <img class="ml-1" src="images/star_on.png" alt="star_on" width="15px" height="15px" loading="lazy">
+                                    <img class="ml-1" src="images/star_on.png" alt="star_on" width="15px" height="15px" loading="lazy">
+                                    <img class="ml-1" src="images/star_off.png" alt="star_off" width="15px" height="15px" loading="lazy">
+                                </div>
+                                <p class="text-primary text-author">8 min</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card card-video col-12 col-md-4 col-xl-3">
+                        <img class="card-img-top" src="images/thumbnail_1.jpg" alt="thumbnail_1">
+                        <div class="card-img-overlay d-flex justify-content-center align-items-center">
+                            <img class="" src="images/play.png" alt="play" width="64px" height="64px">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Natural Smile</h5>
+                            <p class="card-text text-darkblue-subdued">Lorem ipsum dolor sit amet, consect adipiscing elit, sed do eiusmod.</p>
+                            <div class="d-flex">
+                                <img class="rounded-circle" src="images/profile_1.jpg" alt="Philip Massey headshot" width="30px" height="30px" loading="lazy">
+                                <p class="text-primary text-author my-0 py-0 align-self-center ml-2">Phillip Massey</p>
+                            </div>
+                            <div class="d-flex justify-content-between">
+                                <div class="d-flex pt-2">
+                                    <img class="" src="images/star_on.png" alt="star_on" width="15px" height="15px" loading="lazy">
+                                    <img class="ml-1" src="images/star_on.png" alt="star_on" width="15px" height="15px" loading="lazy">
+                                    <img class="ml-1" src="images/star_on.png" alt="star_on" width="15px" height="15px" loading="lazy">
+                                    <img class="ml-1" src="images/star_on.png" alt="star_on" width="15px" height="15px" loading="lazy">
+                                    <img class="ml-1" src="images/star_off.png" alt="star_off" width="15px" height="15px" loading="lazy">
+                                </div>
+                                <p class="text-primary text-author">8 min</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card card-video col-12 col-md-4 col-xl-3">
+                        <img class="card-img-top" src="images/thumbnail_4.jpg" alt="thumbnail_4">
+                        <div class="card-img-overlay d-flex justify-content-center align-items-center">
+                            <img class="" src="images/play.png" alt="play" width="64px" height="64px">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Diagonal Smile</h5>
+                            <p class="card-text text-darkblue-subdued">Lorem ipsum dolor sit amet, consect adipiscing elit, sed do eiusmod.</p>
+                            <div class="d-flex">
+                                <img class="rounded-circle" src="images/profile_1.jpg" alt="Philip Massey headshot" width="30px" height="30px" loading="lazy">
+                                <p class="text-primary text-author my-0 py-0 align-self-center ml-2">Phillip Massey</p>
+                            </div>
+                            <div class="d-flex justify-content-between">
+                                <div class="d-flex pt-2">
+                                    <img class="" src="images/star_on.png" alt="star_on" width="15px" height="15px" loading="lazy">
+                                    <img class="ml-1" src="images/star_on.png" alt="star_on" width="15px" height="15px" loading="lazy">
+                                    <img class="ml-1" src="images/star_on.png" alt="star_on" width="15px" height="15px" loading="lazy">
+                                    <img class="ml-1" src="images/star_on.png" alt="star_on" width="15px" height="15px" loading="lazy">
+                                    <img class="ml-1" src="images/star_off.png" alt="star_off" width="15px" height="15px" loading="lazy">
+                                </div>
+                                <p class="text-primary text-author">8 min</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card card-video col-12 col-md-4 col-xl-3">
+                        <img class="card-img-top" src="images/thumbnail_3.jpg" alt="thumbnail_3">
+                        <div class="card-img-overlay d-flex justify-content-center align-items-center">
+                            <img class="" src="images/play.png" alt="play" width="64px" height="64px">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Sad Smile</h5>
+                            <p class="card-text text-darkblue-subdued">Lorem ipsum dolor sit amet, consect adipiscing elit, sed do eiusmod.</p>
+                            <div class="d-flex">
+                                <img class="rounded-circle" src="images/profile_1.jpg" alt="Philip Massey headshot" width="30px" height="30px" loading="lazy">
+                                <p class="text-primary text-author my-0 py-0 align-self-center ml-2">Phillip Massey</p>
+                            </div>
+                            <div class="d-flex justify-content-between">
+                                <div class="d-flex pt-2">
+                                    <img class="" src="images/star_on.png" alt="star_on" width="15px" height="15px" loading="lazy">
+                                    <img class="ml-1" src="images/star_on.png" alt="star_on" width="15px" height="15px" loading="lazy">
+                                    <img class="ml-1" src="images/star_on.png" alt="star_on" width="15px" height="15px" loading="lazy">
+                                    <img class="ml-1" src="images/star_on.png" alt="star_on" width="15px" height="15px" loading="lazy">
+                                    <img class="ml-1" src="images/star_off.png" alt="star_off" width="15px" height="15px" loading="lazy">
+                                </div>
+                                <p class="text-primary text-author">8 min</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card card-video col-12 col-md-4 col-xl-3">
+                        <img class="card-img-top" src="images/thumbnail_2.jpg" alt="thumbnail_2">
+                        <div class="card-img-overlay d-flex justify-content-center align-items-center">
+                            <img class="" src="images/play.png" alt="play" width="64px" height="64px">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Happy Smile</h5>
+                            <p class="card-text text-darkblue-subdued">Lorem ipsum dolor sit amet, consect adipiscing elit, sed do eiusmod.</p>
+                            <div class="d-flex">
+                                <img class="rounded-circle" src="images/profile_1.jpg" alt="Philip Massey headshot" width="30px" height="30px" loading="lazy">
+                                <p class="text-primary text-author my-0 py-0 align-self-center ml-2">Phillip Massey</p>
+                            </div>
+                            <div class="d-flex justify-content-between">
+                                <div class="d-flex pt-2">
+                                    <img class="" src="images/star_on.png" alt="star_on" width="15px" height="15px" loading="lazy">
+                                    <img class="ml-1" src="images/star_on.png" alt="star_on" width="15px" height="15px" loading="lazy">
+                                    <img class="ml-1" src="images/star_on.png" alt="star_on" width="15px" height="15px" loading="lazy">
+                                    <img class="ml-1" src="images/star_on.png" alt="star_on" width="15px" height="15px" loading="lazy">
+                                    <img class="ml-1" src="images/star_off.png" alt="star_off" width="15px" height="15px" loading="lazy">
+                                </div>
+                                <p class="text-primary text-author">8 min</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Footer -->
+        <footer class="footer bg-darkblue text-light">
+            <div class="container d-flex flex-column flex-md-row justify-content-md-between align-items-center h-100">
+                <div class="d-flex flex-row social-icons">
+                    <a class="mr-2">
+                        <img src="images/smile_off.png" alt="SmileSchool logo" width="37px" height="30px">
+                    </a>
+                    <a class="">
+                        <img src="images/logo.png" alt="SmileSchool text logo" width="114px">
+                    </a>
+                </div>
+                <div class="row social-icons">
+                    <ul class="social nav">
+                        <li class="social-item">
+                            <a href="https://www.facebook.com/HolbertonSchool/" class="social-link">
+                                <span class="holberton_school-icon-ic_facebook social-icon"></span>
+                            </a>
+                        </li>
+                        <li class="social-item pl-2">
+                            <a href="https://twitter.com/holbertonschool" class="social-link">
+                                <span class="holberton_school-icon-ic_twitter"></span>
+                            </a>
+                        </li>
+                        <li class="social-item pl-2">
+                            <a href="https://www.instagram.com/holbertonschool/" class="social-link">
+                                <span class="holberton_school-icon-ic_instagram"></span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <p class="footnote fixed-bottom">©smileschool 2020</p>
+            </div>
+        </footer>
+</html>
