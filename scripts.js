@@ -170,6 +170,11 @@ function loadSearchParameters() {
     let url = 'https://smileschool-api.hbtn.info/courses';
     $.get(url, function (data, status) {
         if (status == 'success') {
+            
+            let topicTitle = data.topics[0];
+            topicTitle = topicTitle.charAt(0).toUpperCase() + topicTitle.slice(1);
+            //console.log(topicTitle);
+            $('#topic-current-dropdown').text(`${topicTitle}`);
             data.topics.forEach(function (element) {               
                 // Fill out topics dropdown.
                 // Capitalize first letter.
@@ -179,10 +184,16 @@ function loadSearchParameters() {
                 `);
                 //console.log(element);
             })
+            
+            let sortTitle = data.sorts[0];
+            sortTitle = sortTitle.split('_');
+            sortTitle = sortTitle[0].charAt(0).toUpperCase() + sortTitle[0].slice(1) + ' ' + sortTitle[1].charAt(0).toUpperCase() + sortTitle[1].slice(1);
+            //console.log(`${sortTitle}`);
+            $('#sort-by-current-dropdown').text(`${sortTitle}`);
             data.sorts.forEach(function (sortOption) {
                 let newSortOption = sortOption;
                 newSortOption = newSortOption.split('_');
-                console.log(newSortOption);
+                //console.log(newSortOption);
                 newSortOption = newSortOption[0].charAt(0).toUpperCase() + newSortOption[0].slice(1) + ' ' + newSortOption[1].charAt(0).toUpperCase() + newSortOption[1].slice(1);
                 $('#sort-options').append(`
                     <div onclick='loadNewSearch("sort-by-current-dropdown", "${newSortOption}", "${sortOption}")' class="dropdown-item" href="#">${newSortOption}</div>
@@ -197,7 +208,9 @@ function loadSearchParameters() {
 }
 
 function loadSearchResults(keywords, topic, sortBy) {
-    $('#loader-search').css('display', 'block');
+    console.log("q: " + keywords);
+    console.log("topic: " + topic);
+    console.log("sorts: " + sortBy);
     function killLoader() {
         $('#loader-search').css('display', 'none');
     }
@@ -206,12 +219,13 @@ function loadSearchResults(keywords, topic, sortBy) {
         url: 'https://smileschool-api.hbtn.info/courses',
         dataType: 'json',
         data: {
-            keywords,
-            topic,
-            sortBy,
+            q: keywords,
+            topic: topic,
+            sorts: sortBy,
         },
         success: function (response) {
             killLoader();
+            console.log(response);
             // Set the results quantity
             if (response.courses.length == 1) {
                 $('#search-results-quantity').text('1 video');
@@ -237,10 +251,18 @@ function loadSearchResults(keywords, topic, sortBy) {
                             <div class="d-flex pt-2" id="v-stars-${course.star}-id-${course.id}"></div>
                             <p class="text-primary text-author">${course.duration}</p>
                         </div>
+                        
                     </div>
                 </div>
                         
                 `);
+                /* Insert below div containing stars to test views and keyboards in browser */
+                /*
+                <div class="d-flex justify-content-between">
+                    <p class="text-primary text-author">${course.views} views</p>
+                    <p class="text-primary text-author">${course.keywords}</p>
+                </div>
+                */
                 /* Add stars for this element */
                 for (let i = 0; i < 5; i++) {
                     if (i < course.star) {
@@ -258,12 +280,36 @@ function loadSearchResults(keywords, topic, sortBy) {
     })
 }
 
-function loadNewSearch(listId, listTitle, sortOption) {
+function loadNewSearch(listId, listTitle, newSearchParam) {
     //console.log(sortOption);
     $(`#${listId}`).text(listTitle);
-    /*
-    console.log(listTag);
-    console.log(listTitle);
-    console.log(queryValue);
-    */
+
+    clearResults();
+    //console.log($('#search_keyword').val());
+    if (listId == 'topic-current-dropdown') {
+        let keywords = $('#search_keyword').val();
+        //console.log(keywords);
+        //console.log($('#sort-by-current-dropdown').text());
+        let sortBy = $('#sort-by-current-dropdown').text().toLowerCase().split(' ');
+        sortBy = `${sortBy[0]}_${sortBy[1]}`;
+        //console.log(`${sortBy}`);
+        loadSearchResults(keywords, newSearchParam, sortBy);
+    } else if (listId == 'sort-by-current-dropdown') {
+        let keywords = $('#search_keyword').val();
+        let currentTopic = $('#topic-current-dropdown').text().toLowerCase();
+        console.log(`${currentTopic}`);
+        loadSearchResults(keywords, currentTopic, newSearchParam);
+    } else {
+        let currentTopic = $('#topic-current-dropdown').text().toLowerCase();
+        let sortBy = $('#sort-by-current-dropdown').text().toLowerCase().split(' ');
+        sortBy = `${sortBy[0]}_${sortBy[1]}`;
+        console.log(`${sortBy}`);
+        loadSearchResults(newSearchParam, currentTopic, sortBy);
+    }
+}
+
+function clearResults() {
+    $('#search-results').empty();
+    $('#search-results').append('<div id="loader-search" class="loader mb-5"></div>');
+    $('#search-results-quantity').text('Searching...');
 }

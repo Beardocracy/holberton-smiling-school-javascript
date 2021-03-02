@@ -65,17 +65,16 @@
                             <div class="search-icon d-flex justify-content-center align-items-center">
                                 <span class="holberton_school-icon-search_2"></span>
                             </div>
-                            <input type="text" class="form-control bg-search-box text-light" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Search by keywords">
+                            <input type="text" id="search_keyword" class="form-control bg-search-box text-light" aria-describedby="search_keyword" placeholder="Search by keywords">
                         </div>
                     </div>
                     <div class="col-12 col-md-6 col-lg-4">
                         <div class="text-12 text-weight-700 my-2">TOPIC</div>
                         <div class="dropdown">
                             <div id='topic-current-dropdown' class="bg-search-box dropdown-toggle search-text" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                All
                             </div>
                             <div id="topic-list" class="dropdown-menu w-100 my-0" aria-labelledby="topic-current-dropdown">
-                                <!-- Loaded by loadSearchResults() -->
+                                <!-- Loaded by loadSearchParameters() -->
                             </div>
                         </div>
                         
@@ -84,10 +83,9 @@
                         <div class="text-12 text-weight-700 my-2">SORT BY</div>
                         <div class="dropdown">
                             <div id="sort-by-current-dropdown" class="bg-search-box dropdown-toggle search-text" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                              Most Popular
                             </div>
                             <div id="sort-options" class="dropdown-menu w-100 my-0" aria-labelledby="sort-by-current-dropdown">
-                                <!-- Loaded by loadSearchResults() -->
+                                <!-- Loaded by loadSearchParameters() -->
                             </div>
                         </div>
                     </div>
@@ -97,7 +95,7 @@
         <!-- Results -->
         <section>
             <div class="container">
-                <div class="text-results py-4" id="search-results-quantity"></div>
+                <div class="text-results py-4" id="search-results-quantity"><!-- Loaded by loadSearchResults() --></div>
                     <div class="row" id="search-results">
                         <div id="loader-search" class="loader mb-5"></div>
                     </div>
@@ -139,6 +137,11 @@
         </footer>
         <script>
             loadSearchParameters();
+            $("#search_keyword").on('keyup', function (event) {
+                if (event.keyCode === 13) {
+                    loadNewSearch("keyword-entered", "", $('#search_keyword').val());
+                }
+            });
         </script>
     </body>
 </html>
