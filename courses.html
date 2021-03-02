@@ -74,11 +74,14 @@
                             <div class="bg-search-box dropdown-toggle search-text" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                               All
                             </div>
-                            <div class="dropdown-menu w-100 my-0" aria-labelledby="dropdownMenuButton">
+                            <div id="topic-list" class="dropdown-menu w-100 my-0" aria-labelledby="dropdownMenuButton">
+                                <!-- 
                                 <div class="dropdown-item" href="#">All</div>
                                 <div class="dropdown-item" href="#">Novice</div>
                                 <div class="dropdown-item" href="#">Intermediate</div>
                                 <div class="dropdown-item" href="#">Expert</div>
+                                -->
+                                
                             </div>
                         </div>
                     </div>
@@ -88,10 +91,13 @@
                             <div class="bg-search-box dropdown-toggle search-text" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                               Most Popular
                             </div>
-                            <div class="dropdown-menu w-100 my-0" aria-labelledby="dropdownMenuButton">
-                              <div class="dropdown-item" href="#">Most Popular</div>
-                              <div class="dropdown-item" href="#">Most Recent</div>
-                              <div class="dropdown-item" href="#">Most Viewed</div>
+                            <div id="sort-options" class="dropdown-menu w-100 my-0" aria-labelledby="dropdownMenuButton">
+                              <!-- 
+                                <div class="dropdown-item" href="#">Most Popular</div>
+                                <div class="dropdown-item" href="#">Most Recent</div>
+                                <div class="dropdown-item" href="#">Most Viewed</div>
+                              -->
+
                             </div>
                         </div>
                     </div>
@@ -103,7 +109,7 @@
             <div class="container">
                 <div class="text-results py-4" id="search-results-quantity">11 videos</div>
                     <div class="row" id="search-results">
-                        <div class="loader mb-5"></div>
+                        <div id="loader-search" class="loader mb-5"></div>
                         <!-- 
                         <div class="card card-video col-12 col-md-4 col-xl-3">
                             <img class="card-img-top" src="images/thumbnail_4.jpg" alt="thumbnail_4">
@@ -168,7 +174,7 @@
             <p class="footnote">©smileschool 2020</p>
         </footer>
         <script>
-            
+            loadSearchParameters();
         </script>
     </body>
 </html>

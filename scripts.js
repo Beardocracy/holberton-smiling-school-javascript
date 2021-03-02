@@ -165,3 +165,82 @@ function loadLatestVideos() {
         }
     })
 }
+
+function loadSearchParameters() {
+    let url = 'https://smileschool-api.hbtn.info/courses';
+    $.get(url, function (data, status) {
+        if (status == 'success') {
+            data.topics.forEach(function (element) {               
+                // Fill out topics dropdown.
+                // Capitalize first letter.
+                let topic = element.charAt(0).toUpperCase() + element.slice(1);
+                $('#topic-list').append(`
+                    <div class="dropdown-item" href="#">${topic}</div>
+                `);
+                //console.log(element);
+            })
+            data.sorts.forEach(function (sortOption) {
+                let newSortOption = sortOption;
+                newSortOption = newSortOption.split('_');
+                console.log(newSortOption);
+                newSortOption = newSortOption[0].charAt(0).toUpperCase() + newSortOption[0].slice(1) + ' ' + newSortOption[1].charAt(0).toUpperCase() + newSortOption[1].slice(1);
+                $('#sort-options').append(`
+                    <div class="dropdown-item" href="#">${newSortOption}</div>
+                `);
+                //console.log(newSortOption);
+            })
+        } else {
+            alert("Server Error. Quotes could not be reached.");
+        }
+    })
+}
+
+function loadSearchResults(keywords, topic, sortby) {
+    function killLoader() {
+        $('#loader-search').remove();
+    }
+    
+    let url = 'https://smileschool-api.hbtn.info/latest-videos';
+    $.get(url, function (data, status) {
+        if (status == 'success') {
+            killLoader();
+            data.forEach(function (element) {               
+                $('#latest-videos-inner').append(`
+                    <div class="carousel-item">
+                        <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+                            <div class="card card-video mx-auto">
+                                <img class="card-img-top" src="${element.thumb_url}" alt="thumbnail_4">
+                                <div class="card-img-overlay d-flex justify-content-center align-items-center">
+                                    <img class="" src="images/play.png" alt="play" width="64px" height="64px">
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title">${element.title}</h5>
+                                    <p class="card-text text-darkblue-subdued">${element['sub-title']}</p>
+                                    <div class="d-flex">
+                                        <img class="rounded-circle" src="${element.author_pic_url}" alt="${element.author} headshot" width="30px" height="30px" loading="lazy">
+                                        <p class="text-primary text-author my-0 py-0 align-self-center ml-2">${element.author}</p>
+                                    </div>
+                                    <div class="d-flex justify-content-between">
+                                        <div class="d-flex pt-2" id="v-stars-${element.star}-id-${element.id}"></div>
+                                        <p class="text-primary text-author">${element.duration}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `);
+                /* Add stars for this element */
+                for (let i = 0; i < 5; i++) {
+                    if (i < element.star) {
+                        $(`#v-stars-${element.star}-id-${element.id}`).append('<img class="ml-1" src="images/star_on.png" alt="star_on" width="15px" height="15px" loading="lazy">');
+                    } else {
+                        $(`#v-stars-${element.star}-id-${element.id}`).append('<img class="ml-1" src="images/star_off.png" alt="star_off" width="15px" height="15px" loading="lazy">');
+                    };
+                }
+                //console.log(element);
+            })
+        } else {
+            alert("Server Error. Quotes could not be reached.");
+        }
+    })
+}
