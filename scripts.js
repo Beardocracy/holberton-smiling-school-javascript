@@ -167,6 +167,7 @@ function loadLatestVideos() {
 }
 
 function loadSearchParameters() {
+    $('#search-results-quantity').text('Loading...');
     let url = 'https://smileschool-api.hbtn.info/courses';
     $.get(url, function (data, status) {
         if (status == 'success') {
@@ -225,7 +226,7 @@ function loadSearchResults(keywords, topic, sortBy) {
         },
         success: function (response) {
             killLoader();
-            console.log(response);
+            //console.log(response);
             // Set the results quantity
             if (response.courses.length == 1) {
                 $('#search-results-quantity').text('1 video');
