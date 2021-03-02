@@ -189,58 +189,74 @@ function loadSearchParameters() {
                 `);
                 //console.log(newSortOption);
             })
+            loadSearchResults('', 'all', 'most_popular');
         } else {
             alert("Server Error. Quotes could not be reached.");
         }
     })
 }
 
-function loadSearchResults(keywords, topic, sortby) {
+function loadSearchResults(keywords, topic, sortBy) {
+    $('#loader-search').css('display', 'block');
     function killLoader() {
-        $('#loader-search').remove();
+        $('#loader-search').css('display', 'none');
     }
-    
-    let url = 'https://smileschool-api.hbtn.info/latest-videos';
-    $.get(url, function (data, status) {
-        if (status == 'success') {
+    $.ajax({
+        type: 'GET',
+        url: 'https://smileschool-api.hbtn.info/courses',
+        dataType: 'json',
+        data: {
+            keywords,
+            topic,
+            sortBy,
+        },
+        success: function (response) {
             killLoader();
-            data.forEach(function (element) {               
-                $('#latest-videos-inner').append(`
-                    <div class="carousel-item">
-                        <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
-                            <div class="card card-video mx-auto">
-                                <img class="card-img-top" src="${element.thumb_url}" alt="thumbnail_4">
-                                <div class="card-img-overlay d-flex justify-content-center align-items-center">
-                                    <img class="" src="images/play.png" alt="play" width="64px" height="64px">
-                                </div>
-                                <div class="card-body">
-                                    <h5 class="card-title">${element.title}</h5>
-                                    <p class="card-text text-darkblue-subdued">${element['sub-title']}</p>
-                                    <div class="d-flex">
-                                        <img class="rounded-circle" src="${element.author_pic_url}" alt="${element.author} headshot" width="30px" height="30px" loading="lazy">
-                                        <p class="text-primary text-author my-0 py-0 align-self-center ml-2">${element.author}</p>
-                                    </div>
-                                    <div class="d-flex justify-content-between">
-                                        <div class="d-flex pt-2" id="v-stars-${element.star}-id-${element.id}"></div>
-                                        <p class="text-primary text-author">${element.duration}</p>
-                                    </div>
-                                </div>
-                            </div>
+            // Set the results quantity
+            if (response.courses.length == 1) {
+                $('#search-results-quantity').text('1 video');
+            } else {
+                $('#search-results-quantity').text(`${response.courses.length} videos`);
+            }
+            // Build the cards.
+            response.courses.forEach(function (course) {               
+                $('#search-results').append(`
+                <div class="card card-video col-12 col-md-4 col-xl-3">
+                    <img class="card-img-top" src="${course.thumb_url}" alt="thumbnail_4">
+                    <div class="card-img-overlay d-flex justify-content-center align-items-center">
+                        <img class="" src="images/play.png" alt="play" width="64px" height="64px">
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">${course.title}</h5>
+                        <p class="card-text text-darkblue-subdued">${course['sub-title']}</p>
+                        <div class="d-flex">
+                            <img class="rounded-circle" src="${course.author_pic_url}" alt="${course.author} headshot" width="30px" height="30px" loading="lazy">
+                            <p class="text-primary text-author my-0 py-0 align-self-center ml-2">${course.author}</p>
+                        </div>
+                        <div class="d-flex justify-content-between">
+                            <div class="d-flex pt-2" id="v-stars-${course.star}-id-${course.id}"></div>
+                            <p class="text-primary text-author">${course.duration}</p>
                         </div>
                     </div>
+                </div>
+                        
                 `);
                 /* Add stars for this element */
                 for (let i = 0; i < 5; i++) {
-                    if (i < element.star) {
-                        $(`#v-stars-${element.star}-id-${element.id}`).append('<img class="ml-1" src="images/star_on.png" alt="star_on" width="15px" height="15px" loading="lazy">');
+                    if (i < course.star) {
+                        $(`#v-stars-${course.star}-id-${course.id}`).append('<img class="ml-1" src="images/star_on.png" alt="star_on" width="15px" height="15px" loading="lazy">');
                     } else {
-                        $(`#v-stars-${element.star}-id-${element.id}`).append('<img class="ml-1" src="images/star_off.png" alt="star_off" width="15px" height="15px" loading="lazy">');
+                        $(`#v-stars-${course.star}-id-${course.id}`).append('<img class="ml-1" src="images/star_off.png" alt="star_off" width="15px" height="15px" loading="lazy">');
                     };
                 }
                 //console.log(element);
             })
-        } else {
-            alert("Server Error. Quotes could not be reached.");
-        }
+
+
+            console.log(response);
+        },
+        error: function (errorMsg) {
+            console.log(errorMsg); 
+        },
     })
 }
