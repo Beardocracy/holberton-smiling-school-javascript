@@ -175,7 +175,7 @@ function loadSearchParameters() {
                 // Capitalize first letter.
                 let topic = element.charAt(0).toUpperCase() + element.slice(1);
                 $('#topic-list').append(`
-                    <div class="dropdown-item" href="#">${topic}</div>
+                    <div onclick='loadNewSearch("topic-current-dropdown", "${topic}", "${element}")' class="dropdown-item" href="#">${topic}</div>
                 `);
                 //console.log(element);
             })
@@ -185,7 +185,7 @@ function loadSearchParameters() {
                 console.log(newSortOption);
                 newSortOption = newSortOption[0].charAt(0).toUpperCase() + newSortOption[0].slice(1) + ' ' + newSortOption[1].charAt(0).toUpperCase() + newSortOption[1].slice(1);
                 $('#sort-options').append(`
-                    <div class="dropdown-item" href="#">${newSortOption}</div>
+                    <div onclick='loadNewSearch("sort-by-current-dropdown", "${newSortOption}", "${sortOption}")' class="dropdown-item" href="#">${newSortOption}</div>
                 `);
                 //console.log(newSortOption);
             })
@@ -249,14 +249,21 @@ function loadSearchResults(keywords, topic, sortBy) {
                         $(`#v-stars-${course.star}-id-${course.id}`).append('<img class="ml-1" src="images/star_off.png" alt="star_off" width="15px" height="15px" loading="lazy">');
                     };
                 }
-                //console.log(element);
             })
-
-
-            console.log(response);
+            //console.log(response);
         },
         error: function (errorMsg) {
             console.log(errorMsg); 
         },
     })
+}
+
+function loadNewSearch(listId, listTitle, sortOption) {
+    //console.log(sortOption);
+    $(`#${listId}`).text(listTitle);
+    /*
+    console.log(listTag);
+    console.log(listTitle);
+    console.log(queryValue);
+    */
 }
